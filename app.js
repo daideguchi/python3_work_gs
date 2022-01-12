@@ -62,13 +62,13 @@ function handleStartButtonClick() {
             return;
         }
 
-        if (text.indexOf('ニュース') !== -1) {
+        if (text.indexOf('株') !== -1) {
             // ニュースだったら、API経由でおすすめ記事を取得する.
             showRecommendArticle();
 
         } else {
             // ニュース以外はわからないよ〜.
-            let synthes = new SpeechSynthesisUtterance('ごめんなさい、ニュース以外はわかりません');
+            let synthes = new SpeechSynthesisUtterance('ごめんなさい、株のニュース以外はわかりません');
             synthes.lang = "ja-JP";
             speechSynthesis.speak(synthes);
         }
@@ -118,7 +118,7 @@ function startIntro() {
     return new Promise((resolve, reject) => {
 
         // let texts = "「おすすめニュースを教えて」と聞いてみてください。".split('');
-        let texts = "「おすすめニュースを教えて」と聞いてみてください。".split('');
+        let texts = "「おすすめの株のニュースを教えて」と聞いてみてください。".split('');
 
         function showMessage(texts, cb) {
             if (texts.length === 0) {

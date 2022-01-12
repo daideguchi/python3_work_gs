@@ -20,7 +20,8 @@ def api_recommend_article():
 
     # """
     #     **** ここを実装します（基礎課題） ****
-
+# https://b.hatena.ne.jp/hotentry/all
+# ttp://feeds.feedburner.com/hatena/b/hotentry
     #     1. はてブのホットエントリーページのHTMLを取得する
     #     2. BeautifulSoupでHTMLを読み込む
     #     3. 記事一覧を取得する
@@ -32,7 +33,7 @@ def api_recommend_article():
     #         }
     # """
 
-    with urlopen("http://feeds.feedburner.com/hatena/b/hotentry") as res:
+    with urlopen("https://b.hatena.ne.jp/search/text?q=%E6%A0%AA") as res:
         html = res.read().decode("utf-8")
     soup = BeautifulSoup(html, "html.parser")
     items = soup.select("item")
